@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Wyz\MongodbPool\Config;
+namespace Yizuan\MongodbPool\Config;
 
 
 use EasySwoole\Spl\SplBean;
@@ -50,7 +50,7 @@ class MongodbConfig extends SplBean
     }
 
     /**
-     * @return Srting
+     * @return String
      */
     public function getDb(): String
     {
@@ -58,7 +58,7 @@ class MongodbConfig extends SplBean
     }
 
     /**
-     * @param Srting $db
+     * @param String $db
      */
     public function setDb(String $db): void
     {

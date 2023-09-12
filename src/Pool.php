@@ -6,9 +6,9 @@
  * Time: 14:46
  */
 
-namespace  Wyz\MongodbPool;
+namespace  Yizuan\MongodbPool;
 
-use Wyz\MongodbPool\Config\MongodbConfig;
+use Yizuan\MongodbPool\Config\MongodbConfig;
 use EasySwoole\Pool\MagicPool;
 
 

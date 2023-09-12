@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Wyz\MongodbPool\Exception;
+namespace Yizuan\MongodbPool\Exception;
 
 
 class Exception extends \Exception

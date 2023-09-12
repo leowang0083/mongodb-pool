@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Wyz\MongodbPool;
+namespace Yizuan\MongodbPool;
 
 
 use EasySwoole\Pool\Config;

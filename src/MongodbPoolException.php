@@ -6,7 +6,7 @@
  * Time: 下午11:08
  */
 
-namespace Wyz\MongodbPool;
+namespace Yizuan\MongodbPool;
 
 
 class MongodbPoolException extends \Exception

@@ -1,9 +1,9 @@
 {
-    "name": "wyz/mongodb-pool",
+    "name": "yizuan/mongodb-pool",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Wyz\\MongodbPool\\": "src/"
+            "Yizuan\\MongodbPool\\": "src/"
         }
     },
     "authors": [

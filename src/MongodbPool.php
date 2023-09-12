@@ -1,12 +1,12 @@
 <?php
 
-namespace Wyz\MongodbPool;
+namespace Yizuan\MongodbPool;
 
 use EasySwoole\Component\Singleton;
-use Wyz\MongodbPool\Config\MongodbConfig;
+use Yizuan\MongodbPool\Config\MongodbConfig;
 use EasySwoole\Pool\Config as PoolConfig;
 use \MongoClient as MongoClient;
-use Wyz\MongodbPool\Exception\Exception;
+use Yizuan\MongodbPool\Exception\Exception;
 
 class MongodbPool
 {
