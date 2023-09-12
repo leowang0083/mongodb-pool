@@ -8,6 +8,7 @@
 
 namespace  Yizuan\MongodbPool;
 
+use MongoDB\Client;
 use Yizuan\MongodbPool\Config\MongodbConfig;
 use EasySwoole\Pool\MagicPool;
 
@@ -25,11 +26,8 @@ class Pool extends MagicPool
 
             $host="{$mongodbConfig->getHost()}:{$mongodbConfig->getPort()}";
 
-            $mongodb = new \MongoClient("mongodb://{$auth}{$host}");
-            $db=$mongodbConfig->getDb();
-            $db=$mongodb->$db;
-
-            return $db;
+            $mongodb = new Client("mongodb://{$auth}{$host}");
+            return $mongodb;
         },new PoolConfig());
     }
 

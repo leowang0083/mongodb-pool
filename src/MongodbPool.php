@@ -3,9 +3,9 @@
 namespace Yizuan\MongodbPool;
 
 use EasySwoole\Component\Singleton;
+use MongoDB\Client;
 use Yizuan\MongodbPool\Config\MongodbConfig;
 use EasySwoole\Pool\Config as PoolConfig;
-use \MongoClient as MongoClient;
 use Yizuan\MongodbPool\Exception\Exception;
 
 class MongodbPool
@@ -22,7 +22,7 @@ class MongodbPool
         }
         if($cask){
             $ref = new \ReflectionClass($cask);
-            if((!$ref->isSubclassOf(MongoClient::class))){
+            if((!$ref->isSubclassOf(Client::class))){
                 throw new Exception("cask {$cask} not a sub class of MongoDB\Client");
             }
         }
@@ -39,9 +39,10 @@ class MongodbPool
         return null;
     }
 
-    static function defer(string $name ='default',$timeout = null):?MongoClient
+    static function defer(string $name ='default',$timeout = null):?Client
     {
         $pool = static::getInstance()->getPool($name);
+        print_r($pool);
         if($pool){
             return $pool->defer($timeout);
         }else{
