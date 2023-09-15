@@ -21,12 +21,16 @@ class Pool extends MagicPool
             if($cask){
                 return new $cask($mongodbConfig);
             }
-            $auth="";
-            if(!empty($mongodbConfig->getUsername()) || !empty($mongodbConfig->getPassword())){$auth="{$mongodbConfig->getUsername()}:{$mongodbConfig->getPassword()}@";}
+            $option="";
+            if(!empty($mongodbConfig->getUsername()) || !empty($mongodbConfig->getPassword())){
+                $option['username']=$mongodbConfig->getUsername();
+                $option['password']=$mongodbConfig->getPassword();
+                $option["authSource"]="admin";
+            }
 
             $host="{$mongodbConfig->getHost()}:{$mongodbConfig->getPort()}";
 
-            $mongodb = new Client("mongodb://{$auth}{$host}");
+            $mongodb = new Client("mongodb://{$host}",$option);
             return $mongodb;
         },new PoolConfig());
     }
