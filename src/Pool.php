@@ -21,7 +21,7 @@ class Pool extends MagicPool
             if($cask){
                 return new $cask($mongodbConfig);
             }
-            $option="";
+            $option=[];
             if(!empty($mongodbConfig->getUsername()) || !empty($mongodbConfig->getPassword())){
                 $option['username']=$mongodbConfig->getUsername();
                 $option['password']=$mongodbConfig->getPassword();
