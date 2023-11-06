@@ -25,7 +25,7 @@ class Pool extends MagicPool
             if(!empty($mongodbConfig->getUsername()) || !empty($mongodbConfig->getPassword())){
                 $option['username']=$mongodbConfig->getUsername();
                 $option['password']=$mongodbConfig->getPassword();
-                $option["authSource"]="admin";
+                $option["authSource"]=$mongodbConfig->getDb();
             }
 
             $host="{$mongodbConfig->getHost()}:{$mongodbConfig->getPort()}";
