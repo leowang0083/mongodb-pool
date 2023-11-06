@@ -42,7 +42,6 @@ class MongodbPool
     static function defer(string $name ='default',$timeout = null):?Client
     {
         $pool = static::getInstance()->getPool($name);
-        print_r($pool);
         if($pool){
             return $pool->defer($timeout);
         }else{
